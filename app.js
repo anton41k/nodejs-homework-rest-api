@@ -2,9 +2,12 @@ const mongoose = require('mongoose')
 const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
+const dotenv = require('dotenv')
 
 const contactsRouter = require('./routes/api/contacts')
-const DB_HOST = require('./config')
+
+dotenv.config()
+const { DB_HOST } = process.env
 
 mongoose.connect(DB_HOST)
   .then(() => console.log('Database connection successful'))
