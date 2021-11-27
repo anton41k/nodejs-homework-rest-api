@@ -5,7 +5,7 @@ const updateFavorite = async (req, res) => {
   const { contactId } = req.params
   const { favorite } = req.body
 
-  const result = await Contact.findOneAndUpdate(contactId, { favorite }, { new: true })
+  const result = await Contact.findByIdAndUpdate(contactId, { favorite }, { new: true })
   if (!result) {
     throw NotFound(`Contact with id=${contactId} not found!`)
   }
