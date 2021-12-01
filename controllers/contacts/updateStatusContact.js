@@ -1,4 +1,4 @@
-const { Contact } = require('../../model')
+const { Contact } = require('../../models')
 const { BadRequest } = require('http-errors')
 
 const updateFavorite = async (req, res) => {

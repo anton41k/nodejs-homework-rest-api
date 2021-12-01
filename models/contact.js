@@ -11,11 +11,13 @@ const contactSchema = Schema({
   },
   email: {
     type: String,
-    match: emailRegexp
+    match: emailRegexp,
+    required: [true, 'Set name for contact'],
   },
   phone: {
     type: String,
-    match: phoneRegexp
+    match: phoneRegexp,
+    required: [true, 'Set name for contact'],
   },
   favorite: {
     type: Boolean,
