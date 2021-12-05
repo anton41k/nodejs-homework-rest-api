@@ -47,10 +47,15 @@ const joiLoginSchema = Joi.object({
   subscription: Joi.string().valid('starter', 'pro', 'business'),
 })
 
+const subscriptionJoiSchema = Joi.object({
+  subscription: Joi.string().valid('starter', 'pro', 'business'),
+})
+
 const User = model('user', userSchema)
 
 module.exports = {
   User,
   joiRegisterSchema,
-  joiLoginSchema
+  joiLoginSchema,
+  subscriptionJoiSchema
 }
