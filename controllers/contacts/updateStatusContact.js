@@ -1,7 +1,7 @@
 const { Contact } = require('../../models')
 const { BadRequest } = require('http-errors')
 
-const updateFavorite = async (req, res) => {
+async function updateFavorite(req, res) {
   const { contactId } = req.params
   const { favorite } = req.body
   const result = await Contact.findByIdAndUpdate(contactId, { favorite }, { new: true })

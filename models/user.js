@@ -25,6 +25,10 @@ const userSchema = Schema({
     type: String,
     default: null
   },
+  avatarURL: {
+    type: String,
+    require: [true, 'Avatar is required']
+  }
 }, { versionKey: false, timestamps: true })
 
 userSchema.methods.setPassword = function(password) {

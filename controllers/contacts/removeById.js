@@ -1,7 +1,7 @@
 const { Contact } = require('../../models')
 const { NotFound } = require('http-errors')
 
-const removeById = async (req, res) => {
+async function removeById(req, res) {
   const { contactId } = req.params
   const result = await Contact.findByIdAndRemove(contactId)
   if (!result) {

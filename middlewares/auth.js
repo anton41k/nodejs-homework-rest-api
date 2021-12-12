@@ -5,7 +5,7 @@ const { User } = require('../models')
 
 const { SECRET_KEY } = process.env
 
-const auth = async (req, res, next) => {
+async function auth(req, res, next) {
   const { authorization = '' } = req.headers
   const [bearer, token] = authorization.split(' ')
 

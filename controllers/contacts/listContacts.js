@@ -1,6 +1,6 @@
 const { Contact } = require('../../models')
 
-const listContacts = async (req, res) => {
+async function listContacts(req, res) {
   const { _id } = req.user
   const { page = 1, limit = 20, favorite } = req.query
   const skip = (page - 1) * limit

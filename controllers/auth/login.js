@@ -5,7 +5,7 @@ const { User } = require('../../models')
 
 const { SECRET_KEY } = process.env
 
-const login = async (req, res) => {
+async function login(req, res) {
   const { subscription, email, password } = req.body
   const user = await User.findOne({ email })
   if (!user || !user.comparePassword(password)) {

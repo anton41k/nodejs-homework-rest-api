@@ -1,7 +1,7 @@
 const { NotFound } = require('http-errors')
 const isValidObjectId = require('./validationId')
 
-const validation = (schema) => {
+function validation(schema) {
   return (req, res, next) => {
     const { error } = schema.validate(req.body)
     const { contactId } = req.params
