@@ -4,6 +4,9 @@ const { sendEmail, initEmail } = require('../../utils')
 
 async function reverify(req, res) {
   const { email } = req.body
+  if (!email) {
+    throw new BadRequest('missing required field email')
+  }
   const user = await User.findOne({ email })
 
   if (!user) {
