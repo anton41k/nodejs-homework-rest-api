@@ -1,6 +1,6 @@
 const fs = require('fs/promises')
 const path = require('path')
-const imageResize = require('../../utils/imageResize')
+const { imageResize } = require('../../utils/')
 
 const { User } = require('../../models')
 
